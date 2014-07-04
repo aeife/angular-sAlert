@@ -1,21 +1,21 @@
 {
-  "name": "ngAlert",
+  "name": "angular-salert",
   "version": "0.1.0",
-  "description": "ngAlert",
+  "description": "simple alert for angular",
   "main": "alert.js",
   "scripts": {
     "test": "karma start"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aeife/ngAlert.git"
+    "url": "https://github.com/aeife/angular-sAlert.git"
   },
   "author": "aeife",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aeife/ngAlert/issues"
+    "url": "https://github.com/aeife/angular-sAlert/issues"
   },
-  "homepage": "https://github.com/aeife/ngAlert",
+  "homepage": "https://github.com/aeife/angular-sAlert",
   "dependencies": {
     "phantomjs": "^1.9.7-12",
     "karma-phantomjs-launcher": "^0.1.4",
