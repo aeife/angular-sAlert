@@ -1,0 +1,9 @@
+.alertbox {
+    margin-top: 55px;
+}
+
+.alert {
+    padding: 3px;
+    margin-bottom: 5px;
+    text-align: center;
+}

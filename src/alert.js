@@ -59,7 +59,7 @@ angular.module('alert', [])
     .directive('alertbox', function () {
         return {
             restrict: 'E',
-            templateUrl: '/gandalf/resources/empCheck/src/alert/alert.html',
+            templateUrl: './alert.html',
             controller: 'alertboxCtrl'
         };
     });
