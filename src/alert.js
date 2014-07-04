@@ -59,7 +59,7 @@ angular.module('alert', [])
     .directive('alertbox', function () {
         return {
             restrict: 'E',
-            templateUrl: './alert.html',
+            templateUrl: '/src/alert.html',
             controller: 'alertboxCtrl'
         };
     });
