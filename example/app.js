@@ -23,4 +23,37 @@ angular.module('myApp', ['alert'])
         $scope.addError = function () {
             alert.error('sAlert error');
         }
+
+        $scope.addSuccessAndAutoRemove = function () {
+            alert.success('sAlert success, auto remove').autoRemove();
+        }
+
+        $scope.addInfoAndAutoRemove = function () {
+            alert.info('sAlert info, auto remove').autoRemove();
+        }
+
+        $scope.addErrorAndAutoRemove = function () {
+            alert.error('sAlert error, auto remove').autoRemove();
+        }
+
+        
+
+        $scope.deferred = $q.defer();
+
+        $scope.resolvePromise = function () {
+            $scope.deferred.resolve();
+            $scope.deferred = $q.defer();
+        }
+
+        $scope.addSuccessAndRemoveOnPromise = function () {
+            alert.success('sAlert success, remove on promise finish').removeOnResolve($scope.deferred.promise);
+        }
+
+        $scope.addInfoAndRemoveOnPromise = function () {
+            alert.info('sAlert info, remove on promise finish').removeOnResolve($scope.deferred.promise);
+        }
+
+        $scope.addErrorAndRemoveOnPromise = function () {
+            alert.error('sAlert error, remove on promise finish').removeOnResolve($scope.deferred.promise);
+        }
     });

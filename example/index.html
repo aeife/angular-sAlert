@@ -9,7 +9,6 @@
      <!-- Navbar -->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
-
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -17,14 +16,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">angular-sAlert</a>
+                <a class="navbar-brand" href="">angular-sAlert</a>
             </div>
-
-            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right" nav-menu>
-                    <li><a ng-href="">Status</a></li>
-                </ul>
-            </div> -->
         </div>
     </nav>
 
@@ -32,9 +25,22 @@
     <div class="container main-container">
         <alertbox></alertbox>
         <div ng-controller="mainCtrl">
-            <button class="btn btn-success" ng-click="addSuccess()">Add success alert</button>
-            <button class="btn btn-info" ng-click="addInfo()">Add info alert</button>
-            <button class="btn btn-danger" ng-click="addError()">Add error alert</button>
+            <h3>simple alerts</h3>
+            <button class="btn btn-success" ng-click="addSuccess()">success alert</button>
+            <button class="btn btn-info" ng-click="addInfo()">info alert</button>
+            <button class="btn btn-danger" ng-click="addError()">error alert</button>
+
+            <h3>auto removing alerts</h3>
+            <button class="btn btn-success" ng-click="addSuccessAndAutoRemove()">success alert</button>
+            <button class="btn btn-info" ng-click="addInfoAndAutoRemove()">info alert</button>
+            <button class="btn btn-danger" ng-click="addErrorAndAutoRemove()">error alert</button>
+
+            <h3>removing alerts on promise finish</h3>
+            <button class="btn btn-primary" ng-click="resolvePromise()">resolve promise</button>
+            <br/> <br/>
+            <button class="btn btn-success" ng-click="addSuccessAndRemoveOnPromise()">success alert</button>
+            <button class="btn btn-info" ng-click="addInfoAndRemoveOnPromise()">info alert</button>
+            <button class="btn btn-danger" ng-click="addErrorAndRemoveOnPromise()">error alert</button>
         </div>
     </div>
 
