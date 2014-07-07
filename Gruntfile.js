@@ -45,6 +45,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        },
         less: {
             development: {
                 options: {
@@ -62,7 +67,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-angular-templates');
+    grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['jshint', 'copy', 'ngtemplates', 'uglify', 'less']);
+    grunt.registerTask('default', ['karma', 'jshint', 'copy', 'ngtemplates', 'uglify', 'less']);
 
 };
