@@ -1,3 +1,5 @@
+'use strict';
+
 describe('alert', function () {
     var alert;
     var rootScope;

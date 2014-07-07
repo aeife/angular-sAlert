@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('alert', [])
     .service('alert', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
 
