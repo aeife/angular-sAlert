@@ -61,7 +61,7 @@ angular.module('sAlert', [])
     .directive('sAlert', function () {
         return {
             restrict: 'E',
-            templateUrl: 'src/sAlert.html',
+            templateUrl: 'sAlert.html',
             controller: 'sAlertCtrl'
         };
     });

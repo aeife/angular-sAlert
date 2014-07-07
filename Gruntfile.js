@@ -38,11 +38,15 @@ module.exports = function(grunt) {
             }
         },
         ngtemplates: {
-            sAlert: {
+            app: {
                 src: 'src/<%= moduleName %>.html',
                 dest: 'dist/<%= moduleName %>.js',
                 options: {
-                    append: true
+                    append: true,
+                    module: '<%= moduleName %>',
+                    url: function (url) {
+                        return 'sAlert.html';
+                    }
                 }
             }
         },
