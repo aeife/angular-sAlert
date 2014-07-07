@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://github.com/aeife/angular-sAlert",
   "authors": [
-    "aeife"
+    "André Eife <andre.eife@gmail.com>"
   ],
   "main": "alert.js",
   "moduleType": [

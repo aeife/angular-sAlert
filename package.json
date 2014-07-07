@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/aeife/angular-sAlert.git"
   },
-  "author": "aeife",
+  "author": "André Eife <andre.eife@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aeife/angular-sAlert/issues"
