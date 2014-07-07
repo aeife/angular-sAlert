@@ -71,9 +71,9 @@ describe('alert', function () {
             alert.remove(1);
 
             var messages = alert.get();
-            expect(messages[0]).toBeDefined;
-            expect(messages[1]).not.toBeDefined;
-            expect(messages[2]).toBeDefined;
+            expect(messages[0]).toBeDefined();
+            expect(messages[1]).not.toBeDefined();
+            expect(messages[2]).toBeDefined();
         });
 
         it('should empty msg array on clear', function () {
@@ -100,7 +100,7 @@ describe('alert', function () {
         it('should add autoRemove attribute to each message', function () {
             alert.error('generic error');
 
-            expect(alert.get()[0].autoRemove).toBeDefined;
+            expect(alert.get()[0].autoRemove).toBeDefined();
         });
 
         it('should default autoRemove to false', function () {
@@ -110,7 +110,7 @@ describe('alert', function () {
         });
 
         it('should present a function for autoRemove', function () {
-            expect(alert.error('generic error').autoRemove).toBeDefined;
+            expect(alert.error('generic error').autoRemove).toBeDefined();
         });
 
         describe('autoRemove function', function () {
@@ -130,7 +130,7 @@ describe('alert', function () {
 
         describe('removeOnResolve function', function () {
             it('should present a function for autoRemoveOnResolve', function () {
-                expect(alert.info('generic info').removeOnResolve).toBeDefined;
+                expect(alert.info('generic info').removeOnResolve).toBeDefined();
             });
 
             it('should remove specified alert after promise resolved', function () {

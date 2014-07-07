@@ -1,5 +1,5 @@
 angular.module('alert', [])
-    .service('alert', function ($rootScope, $timeout) {
+    .service('alert', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
 
         var messages = {};
         var idCounter = 0;
@@ -52,10 +52,10 @@ angular.module('alert', [])
         };
 
         return alert;
-    })
-    .controller('alertboxCtrl', function ($scope, alert) {
+    }])
+    .controller('alertboxCtrl', ['$scope', 'alert', function ($scope, alert) {
         $scope.alert = alert;
-    })
+    }])
     .directive('alertbox', function () {
         return {
             restrict: 'E',
