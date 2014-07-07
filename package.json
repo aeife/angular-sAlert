@@ -2,7 +2,7 @@
   "name": "angular-salert",
   "version": "0.1.0",
   "description": "simple alert for angular",
-  "main": "alert.js",
+  "main": "dist/sAlert.js",
   "scripts": {
     "test": "karma start"
   },

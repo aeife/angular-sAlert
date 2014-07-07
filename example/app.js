@@ -1,5 +1,5 @@
-angular.module('myApp', ['alert'])
-    .controller('mainCtrl', function ($scope, alert, $q, $timeout) {
+angular.module('myApp', ['sAlert'])
+    .controller('mainCtrl', function ($scope, sAlert, $q, $timeout) {
         // alert.info('sAlert info');
         // alert.error('sAlert error');
         // alert.success('sAlert success');
@@ -13,27 +13,28 @@ angular.module('myApp', ['alert'])
         // }, 3000);
 
         $scope.addSuccess = function () {
-            alert.success('sAlert success');
+            sAlert.success('sAlert success');
         }
 
         $scope.addInfo = function () {
-            alert.info('sAlert info');
+            console.log("info");
+            sAlert.info('sAlert info');
         }
 
         $scope.addError = function () {
-            alert.error('sAlert error');
+            sAlert.error('sAlert error');
         }
 
         $scope.addSuccessAndAutoRemove = function () {
-            alert.success('sAlert success, auto remove').autoRemove();
+            sAlert.success('sAlert success, auto remove').autoRemove();
         }
 
         $scope.addInfoAndAutoRemove = function () {
-            alert.info('sAlert info, auto remove').autoRemove();
+            sAlert.info('sAlert info, auto remove').autoRemove();
         }
 
         $scope.addErrorAndAutoRemove = function () {
-            alert.error('sAlert error, auto remove').autoRemove();
+            sAlert.error('sAlert error, auto remove').autoRemove();
         }
 
         
@@ -46,14 +47,14 @@ angular.module('myApp', ['alert'])
         }
 
         $scope.addSuccessAndRemoveOnPromise = function () {
-            alert.success('sAlert success, remove on promise finish').removeOnResolve($scope.deferred.promise);
+            sAlert.success('sAlert success, remove on promise finish').removeOnResolve($scope.deferred.promise);
         }
 
         $scope.addInfoAndRemoveOnPromise = function () {
-            alert.info('sAlert info, remove on promise finish').removeOnResolve($scope.deferred.promise);
+            sAlert.info('sAlert info, remove on promise finish').removeOnResolve($scope.deferred.promise);
         }
 
         $scope.addErrorAndRemoveOnPromise = function () {
-            alert.error('sAlert error, remove on promise finish').removeOnResolve($scope.deferred.promise);
+            sAlert.error('sAlert error, remove on promise finish').removeOnResolve($scope.deferred.promise);
         }
     });

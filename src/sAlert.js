@@ -1,17 +1,17 @@
 'use strict';
 
-angular.module('alert', [])
-    .service('alert', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
+angular.module('sAlert', [])
+    .service('sAlert', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
 
         var messages = {};
         var idCounter = 0;
 
         // remove messages on route change
         $rootScope.$on('$routeChangeSuccess', function() {
-            alert.clear();
+            sAlert.clear();
         });
 
-        var alert =  {
+        var sAlert =  {
             clear: function(){
                 messages = {};
             },
@@ -26,15 +26,15 @@ angular.module('alert', [])
                     autoRemove: function () {
                         messages[id].autoRemove = true;
                         $timeout(function () {
-                            alert.remove(id);
+                            sAlert.remove(id);
                         }, 2000);
                     },
                     removeOnResolve: function (promise) {
                         messages[id].autoRemove = true;
                         promise.then(function () {
-                            alert.remove(id);
+                            sAlert.remove(id);
                         }, function () {
-                            alert.remove(id);
+                            sAlert.remove(id);
                         });
                     }
                 };
@@ -53,15 +53,15 @@ angular.module('alert', [])
             }
         };
 
-        return alert;
+        return sAlert;
     }])
-    .controller('alertboxCtrl', ['$scope', 'alert', function ($scope, alert) {
-        $scope.alert = alert;
+    .controller('sAlertCtrl', ['$scope', 'sAlert', function ($scope, sAlert) {
+        $scope.sAlert = sAlert;
     }])
-    .directive('alertbox', function () {
+    .directive('sAlert', function () {
         return {
             restrict: 'E',
-            templateUrl: '/src/alert.html',
-            controller: 'alertboxCtrl'
+            templateUrl: 'src/sAlert.html',
+            controller: 'sAlertCtrl'
         };
     });

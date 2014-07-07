@@ -1,6 +1,0 @@
-<div class="sAlert navbar-fixed-top container alertbox">
-    <div ng-repeat="message in alert.get()" class="alert alert-{{message.type}}">
-        <button type="button" class="close" ng-if="!message.autoRemove" ng-click="alert.remove(message.id)">&times;</button>
-        {{message.msg}}
-    </div>
-</div>

@@ -1,10 +1,11 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        moduleName: 'sAlert',
         copy: {
           main: {
-            src: 'src/alert.js',
-            dest: 'dist/alert.js',
+            src: 'src/<%= moduleName %>.js',
+            dest: 'dist/<%= moduleName %>.js',
           },
         },
         uglify: {
@@ -24,8 +25,8 @@ module.exports = function(grunt) {
             dist: {
                 files: [
                     {
-                        src: 'dist/alert.js',
-                        dest: 'dist/alert.js'
+                        src: 'dist/<%= moduleName %>.js',
+                        dest: 'dist/<%= moduleName %>.js'
                     }
                 ]
             }
@@ -37,9 +38,9 @@ module.exports = function(grunt) {
             }
         },
         ngtemplates: {
-            alert: {
-                src: 'src/alert.html',
-                dest: 'dist/alert.js',
+            sAlert: {
+                src: 'src/<%= moduleName %>.html',
+                dest: 'dist/<%= moduleName %>.js',
                 options: {
                     append: true
                 }
@@ -56,7 +57,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    "dist/alert.css": "src/alert.less"
+                    "dist/<%= moduleName %>.css": "src/<%= moduleName %>.less"
                 }
             }
         }
