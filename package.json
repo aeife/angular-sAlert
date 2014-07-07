@@ -1,6 +1,6 @@
 {
   "name": "angular-salert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple alert for angular",
   "main": "dist/sAlert.js",
   "scripts": {
