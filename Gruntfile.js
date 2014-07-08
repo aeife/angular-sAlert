@@ -64,6 +64,15 @@ module.exports = function(grunt) {
                     "dist/<%= moduleName %>.css": "src/<%= moduleName %>.less"
                 }
             }
+        },
+        watch: {
+            scripts: {
+                files: ['src/**/*.js'],
+                tasks: ['default'],
+                options: {
+                    spawn: false,
+                }
+            }
         }
     });
 
@@ -73,6 +82,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['karma', 'jshint', 'copy', 'ngtemplates', 'uglify', 'less']);
 
