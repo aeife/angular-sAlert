@@ -21,9 +21,10 @@
         </div>
     </nav>
 
+    <s-alert options="{container: true}"></s-alert>
+
     <!-- Main View -->
     <div class="container main-container">
-        <s-alert></s-alert>
         <div ng-controller="mainCtrl">
             <h3>simple alerts</h3>
             <button class="btn btn-success" ng-click="addSuccess()">success alert</button>
@@ -41,6 +42,11 @@
             <button class="btn btn-success" ng-click="addSuccessAndRemoveOnPromise()">success alert</button>
             <button class="btn btn-info" ng-click="addInfoAndRemoveOnPromise()">info alert</button>
             <button class="btn btn-danger" ng-click="addErrorAndRemoveOnPromise()">error alert</button>
+
+            <div class="col-xs-6 col-xs-offset-3" style="border: 1px solid grey;">
+                <h5>locale alert placements</h5>
+                <s-alert options="{{myAlertOptions}}"></s-alert>
+            </div>
         </div>
     </div>
 

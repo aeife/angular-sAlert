@@ -57,11 +57,21 @@ angular.module('sAlert', [])
     }])
     .controller('sAlertCtrl', ['$scope', 'sAlert', function ($scope, sAlert) {
         $scope.sAlert = sAlert;
+
+        $scope.opts = {
+            fixedOnTop: true,
+            container: false
+        };
+
+        $scope.opts = angular.extend({}, $scope.opts, $scope.$eval($scope.options));
     }])
     .directive('sAlert', function () {
         return {
             restrict: 'E',
             templateUrl: 'sAlert.html',
+            scope: {
+                options: '@'
+            },
             controller: 'sAlertCtrl'
         };
     });
