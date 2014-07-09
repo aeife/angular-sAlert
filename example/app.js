@@ -11,7 +11,6 @@ angular.module('myApp', ['sAlert'])
         }
 
         $scope.addInfo = function () {
-            console.log("info");
             sAlert.info('sAlert info');
         }
 
@@ -52,5 +51,18 @@ angular.module('myApp', ['sAlert'])
 
         $scope.addErrorAndRemoveOnPromise = function () {
             sAlert.error('sAlert error, remove on promise finish').removeOnResolve($scope.deferred.promise);
+        }
+
+
+        $scope.addSuccessInInstance = function () {
+            sAlert.success('sAlert success', 'localAlertInstance');
+        }
+
+        $scope.addInfoInInstance = function () {
+            sAlert.info('sAlert info', 'localAlertInstance');
+        }
+
+        $scope.addErrorInInstance = function () {
+            sAlert.error('sAlert error', 'localAlertInstance');
         }
     });
