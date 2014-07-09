@@ -1,16 +1,10 @@
 angular.module('myApp', ['sAlert'])
     .controller('mainCtrl', function ($scope, sAlert, $q, $timeout) {
-        // alert.info('sAlert info');
-        // alert.error('sAlert error');
-        // alert.success('sAlert success');
-        // alert.info('sAlert autoRemove').autoRemove();
+        $scope.myAlertOptions = {
+            fixedOnTop: false
+        };
 
-        // var deferred = $q.defer();
-        // alert.info('sAlert remove on promise').removeOnResolve(deferred.promise);
-
-        // $timeout(function () {
-        //     deferred.resolve();
-        // }, 3000);
+        /* simple alerts */
 
         $scope.addSuccess = function () {
             sAlert.success('sAlert success');
@@ -25,6 +19,8 @@ angular.module('myApp', ['sAlert'])
             sAlert.error('sAlert error');
         }
 
+        /* alerts with auto remove */
+
         $scope.addSuccessAndAutoRemove = function () {
             sAlert.success('sAlert success, auto remove').autoRemove();
         }
@@ -37,7 +33,7 @@ angular.module('myApp', ['sAlert'])
             sAlert.error('sAlert error, auto remove').autoRemove();
         }
 
-        
+        /* alerts with promises */
 
         $scope.deferred = $q.defer();
 
