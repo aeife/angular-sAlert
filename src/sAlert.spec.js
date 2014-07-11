@@ -165,7 +165,7 @@ describe('sAlert', function () {
         });
 
         it('should set defined instance', function () {
-            sAlert.info('generic info', "myTestInstance");
+            sAlert.info('generic info', 'myTestInstance');
 
             expect(sAlert.get()[0].instance).toBe('myTestInstance');
         });
