@@ -10,18 +10,29 @@ angular.module('sAlert', [])
         $rootScope.$on('$routeChangeSuccess', function() {
             sAlert.clear();
         });
-
         var sAlert =  {
+            defaultInstance: 'defaultSAlertInstance',
             clear: function(){
                 messages = {};
             },
             get: function() {
                 return messages;
             },
-            addMsg: function (message, type) {
+            addMsg: function (message, type, instance) {
+
+                if (!instance) {
+                    instance = this.defaultInstance;
+                }
+
                 var id = idCounter;
                 idCounter++;
-                messages[id] = {id: id, msg: message, type: type, autoRemove: false};
+                messages[id] = {
+                    instance: instance,
+                    id: id,
+                    msg: message,
+                    type: type,
+                    autoRemove: false
+                };
                 return {
                     autoRemove: function () {
                         messages[id].autoRemove = true;
@@ -39,14 +50,14 @@ angular.module('sAlert', [])
                     }
                 };
             },
-            success: function (message) {
-                return this.addMsg(message, 'success');
+            success: function (message, instance) {
+                return this.addMsg(message, 'success', instance);
             },
-            info: function(message){
-                return this.addMsg(message, 'info');
+            info: function(message, instance){
+                return this.addMsg(message, 'info', instance);
             },
-            error: function(message){
-                return this.addMsg(message, 'danger');
+            error: function(message, instance){
+                return this.addMsg(message, 'danger', instance);
             },
             remove: function(id){
                 delete messages[id];
@@ -57,11 +68,28 @@ angular.module('sAlert', [])
     }])
     .controller('sAlertCtrl', ['$scope', 'sAlert', function ($scope, sAlert) {
         $scope.sAlert = sAlert;
+
+        if (!$scope.instance) {
+            $scope.alertInstance = sAlert.defaultInstance;
+        } else {
+            $scope.alertInstance = $scope.instance;
+        }
+
+        $scope.opts = {
+            fixedOnTop: true,
+            container: false
+        };
+
+        $scope.opts = angular.extend({}, $scope.opts, $scope.$eval($scope.options));
     }])
     .directive('sAlert', function () {
         return {
             restrict: 'E',
             templateUrl: 'sAlert.html',
+            scope: {
+                options: '@',
+                instance: '@'
+            },
             controller: 'sAlertCtrl'
         };
     });

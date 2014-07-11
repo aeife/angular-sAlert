@@ -1,29 +1,24 @@
 angular.module('myApp', ['sAlert'])
     .controller('mainCtrl', function ($scope, sAlert, $q, $timeout) {
-        // alert.info('sAlert info');
-        // alert.error('sAlert error');
-        // alert.success('sAlert success');
-        // alert.info('sAlert autoRemove').autoRemove();
+        $scope.myAlertOptions = {
+            fixedOnTop: false
+        };
 
-        // var deferred = $q.defer();
-        // alert.info('sAlert remove on promise').removeOnResolve(deferred.promise);
-
-        // $timeout(function () {
-        //     deferred.resolve();
-        // }, 3000);
+        /* simple alerts */
 
         $scope.addSuccess = function () {
             sAlert.success('sAlert success');
         }
 
         $scope.addInfo = function () {
-            console.log("info");
             sAlert.info('sAlert info');
         }
 
         $scope.addError = function () {
             sAlert.error('sAlert error');
         }
+
+        /* alerts with auto remove */
 
         $scope.addSuccessAndAutoRemove = function () {
             sAlert.success('sAlert success, auto remove').autoRemove();
@@ -37,7 +32,7 @@ angular.module('myApp', ['sAlert'])
             sAlert.error('sAlert error, auto remove').autoRemove();
         }
 
-        
+        /* alerts with promises */
 
         $scope.deferred = $q.defer();
 
@@ -56,5 +51,18 @@ angular.module('myApp', ['sAlert'])
 
         $scope.addErrorAndRemoveOnPromise = function () {
             sAlert.error('sAlert error, remove on promise finish').removeOnResolve($scope.deferred.promise);
+        }
+
+
+        $scope.addSuccessInInstance = function () {
+            sAlert.success('sAlert success', 'localAlertInstance');
+        }
+
+        $scope.addInfoInInstance = function () {
+            sAlert.info('sAlert info', 'localAlertInstance');
+        }
+
+        $scope.addErrorInInstance = function () {
+            sAlert.error('sAlert error', 'localAlertInstance');
         }
     });

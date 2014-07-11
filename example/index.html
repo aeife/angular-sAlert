@@ -21,26 +21,48 @@
         </div>
     </nav>
 
+    <s-alert options="{container: true}"></s-alert>
+
     <!-- Main View -->
     <div class="container main-container">
-        <s-alert></s-alert>
         <div ng-controller="mainCtrl">
-            <h3>simple alerts</h3>
-            <button class="btn btn-success" ng-click="addSuccess()">success alert</button>
-            <button class="btn btn-info" ng-click="addInfo()">info alert</button>
-            <button class="btn btn-danger" ng-click="addError()">error alert</button>
+            <div class="col-xs-6">
+                <h3>simple alerts</h3>
+                <button class="btn btn-success" ng-click="addSuccess()">success alert</button>
+                <button class="btn btn-info" ng-click="addInfo()">info alert</button>
+                <button class="btn btn-danger" ng-click="addError()">error alert</button>
 
-            <h3>auto removing alerts</h3>
-            <button class="btn btn-success" ng-click="addSuccessAndAutoRemove()">success alert</button>
-            <button class="btn btn-info" ng-click="addInfoAndAutoRemove()">info alert</button>
-            <button class="btn btn-danger" ng-click="addErrorAndAutoRemove()">error alert</button>
+                <h3>auto removing alerts</h3>
+                <button class="btn btn-success" ng-click="addSuccessAndAutoRemove()">success alert</button>
+                <button class="btn btn-info" ng-click="addInfoAndAutoRemove()">info alert</button>
+                <button class="btn btn-danger" ng-click="addErrorAndAutoRemove()">error alert</button>
 
-            <h3>removing alerts on promise finish</h3>
-            <button class="btn btn-primary" ng-click="resolvePromise()">resolve promise</button>
-            <br/> <br/>
-            <button class="btn btn-success" ng-click="addSuccessAndRemoveOnPromise()">success alert</button>
-            <button class="btn btn-info" ng-click="addInfoAndRemoveOnPromise()">info alert</button>
-            <button class="btn btn-danger" ng-click="addErrorAndRemoveOnPromise()">error alert</button>
+                <h3>removing alerts on promise finish</h3>
+                <button class="btn btn-primary" ng-click="resolvePromise()">resolve promise</button>
+                <br/> <br/>
+                <button class="btn btn-success" ng-click="addSuccessAndRemoveOnPromise()">success alert</button>
+                <button class="btn btn-info" ng-click="addInfoAndRemoveOnPromise()">info alert</button>
+                <button class="btn btn-danger" ng-click="addErrorAndRemoveOnPromise()">error alert</button>
+            </div>
+            <div class="col-xs-6">
+                <div class="col-xs-10 col-xs-offset-1" style="border: 1px solid grey;">
+                    <h5>locale alert placements</h5>
+                    <s-alert options="{{myAlertOptions}}"></s-alert>
+                </div>
+            </div>
+            
+            <div class="col-xs-6">
+                <h3>separate alerts</h3>
+                <button class="btn btn-success" ng-click="addSuccessInInstance()">success alert</button>
+                <button class="btn btn-info" ng-click="addInfoInInstance()">info alert</button>
+                <button class="btn btn-danger" ng-click="addErrorInInstance()">error alert</button>
+            </div>
+            <div class="col-xs-6">
+                <div class="col-xs-10 col-xs-offset-1" style="border: 1px solid grey;">
+                    <h5>separate alert instance</h5>
+                    <s-alert options="{{myAlertOptions}}" instance="localAlertInstance"></s-alert>
+                </div>
+            </div>
         </div>
     </div>
 

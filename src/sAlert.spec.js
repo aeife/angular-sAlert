@@ -157,11 +157,50 @@ describe('sAlert', function () {
         });
     });
 
+    describe('instances', function () {
+        it('should define default instance if no instance is stated', function () {
+            sAlert.info('generic info');
 
+            expect(sAlert.get()[0].instance).toBe(sAlert.defaultInstance);
+        });
+
+        it('should set defined instance', function () {
+            sAlert.info('generic info', 'myTestInstance');
+
+            expect(sAlert.get()[0].instance).toBe('myTestInstance');
+        });
+    });
 
     describe('controller', function () {
         it('should pass sAlert to directive scope', function () {
             expect(scope.sAlert).toBe(sAlert);
+        });
+
+        describe('options', function () {
+            it('should set default options', function () {
+                expect(scope.opts.fixedOnTop).toBeDefined();
+                expect(scope.opts.container).toBeDefined();
+            });
+
+            it('should allow changes to options', function () {
+                scope.options = '{fixedOnTop: false}';
+                inject(function (_$controller_) {
+                    controller = _$controller_('sAlertCtrl', {
+                        $scope: scope,
+                        sAlert: sAlert
+                    });
+                });
+                expect(scope.opts).toEqual({fixedOnTop: false, container: false});
+
+                scope.options = '{container: true}';
+                inject(function (_$controller_) {
+                    controller = _$controller_('sAlertCtrl', {
+                        $scope: scope,
+                        sAlert: sAlert
+                    });
+                });
+                expect(scope.opts).toEqual({fixedOnTop: true, container: true});
+            });
         });
     });
 });
