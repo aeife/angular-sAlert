@@ -157,6 +157,20 @@ describe('sAlert', function () {
         });
     });
 
+    describe('instances', function () {
+        it('should define default instance if no instance is stated', function () {
+            sAlert.info('generic info');
+
+            expect(sAlert.get()[0].instance).toBe(sAlert.defaultInstance);
+        });
+
+        it('should set defined instance', function () {
+            sAlert.info('generic info', "myTestInstance");
+
+            expect(sAlert.get()[0].instance).toBe("myTestInstance");
+        });
+    });
+
     describe('controller', function () {
         it('should pass sAlert to directive scope', function () {
             expect(scope.sAlert).toBe(sAlert);

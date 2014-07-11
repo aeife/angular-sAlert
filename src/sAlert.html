@@ -1,6 +1,6 @@
 <span class="sAlert">
     <div ng-class="{'fixed-on-top': opts.fixedOnTop, 'container': opts.container}">
-        <div ng-repeat="message in sAlert.get()" class="alert alert-{{message.type}}">
+        <div ng-repeat="message in sAlert.get()" class="alert alert-{{message.type}}" ng-if="message.instance == alertInstance">
             <button type="button" class="close" ng-if="!message.autoRemove" ng-click="sAlert.remove(message.id)">&times;</button>
             {{message.msg}}
         </div>
