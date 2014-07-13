@@ -75,12 +75,18 @@ angular.module('sAlert', [])
             $scope.alertInstance = $scope.instance;
         }
 
-        $scope.opts = {
+        var defaultOptions = {
             fixedOnTop: true,
             container: false
         };
 
-        $scope.opts = angular.extend({}, $scope.opts, $scope.$eval($scope.options));
+        var buildOptions = function () {
+            $scope.opts = angular.extend({}, defaultOptions, $scope.$eval($scope.options));
+        };
+
+        buildOptions();
+
+        $scope.$watch('options', buildOptions);
     }])
     .directive('sAlert', function () {
         return {

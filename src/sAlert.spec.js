@@ -182,7 +182,7 @@ describe('sAlert', function () {
                 expect(scope.opts.container).toBeDefined();
             });
 
-            it('should allow changes to options', function () {
+            it('should allow changes to options on init', function () {
                 scope.options = '{fixedOnTop: false}';
                 inject(function (_$controller_) {
                     controller = _$controller_('sAlertCtrl', {
@@ -200,6 +200,23 @@ describe('sAlert', function () {
                     });
                 });
                 expect(scope.opts).toEqual({fixedOnTop: true, container: true});
+            });
+
+            it('should allow changes to options on runtime', function () {
+                scope.options = '{fixedOnTop: false}';
+                inject(function (_$controller_) {
+                    controller = _$controller_('sAlertCtrl', {
+                        $scope: scope,
+                        sAlert: sAlert
+                    });
+                });
+
+                expect(scope.opts).toEqual({fixedOnTop: false, container: false});
+
+                scope.options = '{fixedOnTop: true}';
+                scope.$digest();
+
+                expect(scope.opts).toEqual({fixedOnTop: true, container: false});
             });
         });
     });
