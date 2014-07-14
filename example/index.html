@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>angular-sAlert example</title>
-    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../dist/sAlert.css">
+    <meta charset="utf-8">
+    <title>angular-sAlert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="simple, smart alerts for AngularJS">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/sAlert.css" rel="stylesheet">
+    <link href="../bower_components/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/syntax.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" />
 </head>
-<body ng-app="myApp">
-     <!-- Navbar -->
-    <nav class="navbar navbar-default" role="navigation">
+
+<body ng-app="app">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -16,60 +25,359 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">angular-sAlert</a>
+                <a class="navbar-brand" href="" smooth-scroll-jquery target="header">
+                    <img src="./img/iconBlackThick.png" height="15">angular-sAlert</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="" smooth-scroll-jquery target="Getting-Started" offset="55">Getting Started</a>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="" smooth-scroll-jquery target="Simple-Alerts" offset="55">Simple Alerts</a>
+                            </li>
+                            <li><a href="" smooth-scroll-jquery target="Auto-Removing-Alerts" offset="55">Auto Removing Alerts</a>
+                            </li>
+                            <li><a href="" smooth-scroll-jquery target="Alerts-with-promises" offset="55">Alerts with promises</a>
+                            </li>
+                            <li><a href="" smooth-scroll-jquery target="Configuration" offset="55">Configuration</a>
+                            </li>
+                            <li><a href="" smooth-scroll-jquery target="Instances" offset="55">Instances</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="" smooth-scroll-jquery target="Contribution" offset="55">Contribution</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-
-    <s-alert options="{container: true}"></s-alert>
-
-    <!-- Main View -->
-    <div class="container main-container">
-        <div ng-controller="mainCtrl">
-            <div class="col-xs-6">
-                <h3>simple alerts</h3>
-                <button class="btn btn-success" ng-click="addSuccess()">success alert</button>
-                <button class="btn btn-info" ng-click="addInfo()">info alert</button>
-                <button class="btn btn-danger" ng-click="addError()">error alert</button>
-
-                <h3>auto removing alerts</h3>
-                <button class="btn btn-success" ng-click="addSuccessAndAutoRemove()">success alert</button>
-                <button class="btn btn-info" ng-click="addInfoAndAutoRemove()">info alert</button>
-                <button class="btn btn-danger" ng-click="addErrorAndAutoRemove()">error alert</button>
-
-                <h3>removing alerts on promise finish</h3>
-                <button class="btn btn-primary" ng-click="resolvePromise()">resolve promise</button>
-                <br/> <br/>
-                <button class="btn btn-success" ng-click="addSuccessAndRemoveOnPromise()">success alert</button>
-                <button class="btn btn-info" ng-click="addInfoAndRemoveOnPromise()">info alert</button>
-                <button class="btn btn-danger" ng-click="addErrorAndRemoveOnPromise()">error alert</button>
+    <div id="header" class="jumbotron">
+        <div class="container">
+            <div class="col-xs-7 col-md-8 col-lg-9">
+                <h1>angular-sAlert</h1>
+                <p>simple, smart alerts for AngularJS</p> <a class="btn btn-default btn-lg" role="button" href=https://github.com/aeife/angular-sAlert/archive/1.1.2.zip><i class="fa fa-download fa-lg"></i> Download (1.1.2)</a>
+                <a class="btn btn-default btn-lg" role="button" href="https://github.com/aeife/angular-sAlert"><i class="fa fa-github fa-lg"></i> View on GitHub</a>
             </div>
-            <div class="col-xs-6">
-                <div class="col-xs-10 col-xs-offset-1" style="border: 1px solid grey;">
-                    <h5>locale alert placements</h5>
-                    <s-alert options="{{myAlertOptions}}"></s-alert>
-                    fixed-on-top:
-                    <input type="checkbox" ng-model="myAlertOptions.fixedOnTop">
-                </div>
-            </div>
-            
-            <div class="col-xs-6">
-                <h3>separate alerts</h3>
-                <button class="btn btn-success" ng-click="addSuccessInInstance()">success alert</button>
-                <button class="btn btn-info" ng-click="addInfoInInstance()">info alert</button>
-                <button class="btn btn-danger" ng-click="addErrorInInstance()">error alert</button>
-            </div>
-            <div class="col-xs-6">
-                <div class="col-xs-10 col-xs-offset-1" style="border: 1px solid grey;">
-                    <h5>separate alert instance</h5>
-                    <s-alert options="{{myAlertOptions}}" instance="localAlertInstance"></s-alert>
-                </div>
+            <div class="col-xs-5 col-md-4 col-lg-3">
+                <img src="./img/iconBlackThick.png">
             </div>
         </div>
     </div>
+    <div class="container" ng-controller="alertConfigurationCtrl">
+        <s-alert options="{[{myAlertOptions}]}"></s-alert>
+        <div id="Getting-Started" class="post">
+            <h1 class="postTitle">Getting Started
+                <small>Installation and Setup</small>
+            </h1>
+            <div class="col-xs-12">
+                <h2>Dependencies</h2>
+                <p>The distribution already contains a very small subset of needed bootstrap styles. So the only dependency is <a href="http://angularjs.org/">AngularJS</a>.</p>
+                <!-- ## Required files
+All required files are present in the dist folder in the repository. The following files are required for *angular-sAlert* to work:
 
+  * [sAlert.js](https://github.com/aeife/angular-sAlert/blob/master/dist/sAlert.js) (contains the angular module, logic and templates)
+  * [sAlert.css](https://github.com/aeife/angular-sAlert/blob/master/dist/sAlert.css) (contains the styling)
+-->
+                <h2>Bower</h2>
+                <p>The easiest way to install
+                    <em>angular-sAlert</em>locally is with <a href="http://bower.io/">bower</a>:</p> <pre><code>bower install angular-sAlert
+</code></pre>
+                <p>You can add the flag
+                    <code>-S</code>to save the dependency in your
+                    <em>bower.json</em>file.</p>
+                <h3>Manual download</h3>
+                <p>Alternatively you can <a href="https://github.com/aeife/angular-sAlert/releases">download</a> a release and copy the files located in the
+                    <em>dist</em>folder to your project.</p>
+                <h2>Include files in your project</h2>
+                <p>In order for
+                    <em>angular-sAlert</em>to work you need to include the following files in your project.</p>
+                <p>JavaScript:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;angular-sAlert/dist/sAlert.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre>
+                </div>
+                <p>CSS:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/bower_components/angular-sAlert/dist/sAlert.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span></code></pre>
+                </div>
+                <h2>Installation</h2>
+                <p>To use
+                    <em>angular-sAlert</em>you need to integrate it in your angular application.</p>
+                <p>Define the sAlert angular module as a dependency:</p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;myApp&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sAlert&#39;</span><span class="p">]);</span></code></pre>
+                </div>
+                <p>To display the alerts you need to include the sAlert directive in your html:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;s-alert&gt;&lt;/s-alert&gt;</span></code></pre>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="Simple-Alerts" class="post">
+            <h1 class="postTitle">Simple Alerts
+                <small>open alerts of different types</small>
+            </h1>
+            <div class="col-xs-6 exampleTemplate">
+                <div ng-controller="simpleAlertsCtrl">
+                    <h5>open a simple success alert:</h5>
+                    <input type="text" class="form-control" ng-model="successAlertMsg">
+                    <button class="btn btn-success btn-block" ng-click="addSuccess()">success alert</button>
+                    <h5>open a simple info alert:</h5>
+                    <input type="text" class="form-control" ng-model="infoAlertMsg">
+                    <button class="btn btn-info btn-block" ng-click="addInfo()">info alert</button>
+                    <h5>open a simple error alert:</h5>
+                    <input type="text" class="form-control" ng-model="errorAlertMsg">
+                    <button class="btn btn-danger btn-block" ng-click="addError()">error alert</button>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p>To use
+                    <em>angular-sAlert</em>you need to inject the
+                    <em>sAlert</em>service via the angular dependency injection.</p>
+                <p>After that you can use the service to create and display new alerts. The
+                    <em>sAlert</em>service proced a function for each alert type. Call the function of the alert type you want to be displayed and pass the alert message as a parameter.</p>
+                <p>There are three supported types of alert messages:</p>
+                <p>
+                    <strong>success</strong>
+                </p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;my success message&#39;</span><span class="p">);</span></code></pre>
+                </div>
+                <p>
+                    <strong>info</strong>
+                </p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;my info message&#39;</span><span class="p">);</span></code></pre>
+                </div>
+                <p>
+                    <strong>error</strong>
+                </p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;my error message&#39;</span><span class="p">);</span></code></pre>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/Ahe4C/embedded/js,html/light/"></iframe>
+            </div>
+        </div>
+        <hr>
+        <div id="Auto-Removing-Alerts" class="post">
+            <h1 class="postTitle">Auto Removing Alerts
+                <small>open alerts that will remove themself after a while</small>
+            </h1>
+            <div class="col-xs-6 exampleTemplate">
+                <div ng-controller="autoRemoveAlertsCtrl">
+                    <h5>open a auto removing error alert:</h5>
+                    <input type="text" class="form-control" ng-model="successAlertMsg">
+                    <button class="btn btn-success btn-block" ng-click="addSuccessAndAutoRemove()">success alert</button>
+                    <h5>open a auto removing error alert:</h5>
+                    <input type="text" class="form-control" ng-model="infoAlertMsg">
+                    <button class="btn btn-info btn-block" ng-click="addInfoAndAutoRemove()">info alert</button>
+                    <h5>open a auto removing error alert:</h5>
+                    <input type="text" class="form-control" ng-model="errorAlertMsg">
+                    <button class="btn btn-danger btn-block" ng-click="addErrorAndAutoRemove()">error alert</button>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p>The standard alerts need to be closed manually one by one by clicking the close icon on the right. But you can specify that an alert should close itself automatically after a while. The default timeout for the close is two seconds.</p>
+                <p>In order to add the auto removing behavior to an alert just append the following function to the declaration:</p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">.</span><span class="nx">autoRemove</span><span class="p">()</span></code></pre>
+                </div>
+                <p>As an example, here is the definition of an auto removing success alert:</p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;i will remove myself soon&#39;</span><span class="p">).</span><span class="nx">autoRemove</span><span class="p">();</span></code></pre>
+                </div>
+                <p>This works with all types of alerts.</p>
+            </div>
+            <div class="col-xs-12">
+                <iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/3cgz8/embedded/js,html/light/"></iframe>
+            </div>
+        </div>
+        <hr>
+        <div id="Alerts-with-promises" class="post">
+            <h1 class="postTitle">Alerts with promises
+                <small>close an alert once a promise is resolved</small>
+            </h1>
+            <div class="col-xs-6 exampleTemplate">
+                <div ng-controller="promiseAlertsCtrl">
+                    <h5>open alerts bound to a promise:</h5>
+                    <div class="row col-xs-12">
+                        <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccessAndRemoveOnPromise()">success</button>
+                        <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfoAndRemoveOnPromise()">info</button>
+                        <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addErrorAndRemoveOnPromise()">error</button>
+                    </div>
+                    <div class="row col-xs-12">
+                        <h5>close alerts by resolving the promise</h5>
+                        <button class="btn btn-primary col-xs-12 col-md-5" ng-click="resolvePromise()">resolve promise</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p>Alerts can also be connected to a promise. Once the promise is resolved or rejected the alert will be removed. This way loading indicators can be realized as a example use case.</p>
+                <p>To specify a promise for an alert append the following function to the alert definition:</p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">.</span><span class="nx">removeOnResolve</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">promise</span><span class="o">&gt;</span><span class="p">);</span></code></pre>
+                </div>
+                <p>The full definition for an alert might be something like that:</p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;loading data...&#39;</span><span class="p">).</span><span class="nx">removeOnResolve</span><span class="p">(</span><span class="nx">myPromise</span><span class="p">);</span></code></pre>
+                </div>
+                <p>Like
+                    <em>autoRemove</em>this works for all types of alerts. In Angular you can use the
+                    <em>$q</em>module for manual promises or you can even use the promise returned by the $http module to indicate the status of a request as an example.</p>
+            </div>
+            <div class="col-xs-12"></div>
+        </div>
+        <hr>
+        <div id="Configuration" class="post">
+            <h1 class="postTitle">Configuration
+                <small>customize the display of alerts with various options</small>
+            </h1>
+            <div class="col-xs-6 exampleTemplate">
+                <h3>Options:</h3>
+                <small>affects examples above</small>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="myAlertOptions.container">container</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="myAlertOptions.fixedOnTop">fixed on top
+                        <small>(deselecting this option will display the alerts on top of the page, so you need to scroll up to see them)</small>
+                    </label>
+                </div>
+                <h3>Open alerts:</h3>
+                <div class="row col-xs-12">
+                    <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccess()">success</button>
+                    <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfo()">info</button>
+                    <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addError()">error</button>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p>You can configure various display options via the
+                    <em>sAlert</em>directive. Just put an object in the
+                    <em>options</em>param.</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;s-alert</span> <span class="na">options=</span><span class="s">&quot;{container: true}&quot;</span><span class="nt">&gt;&lt;/s-alert&gt;</span></code></pre>
+                </div>
+                <p>Alernativly you can directly add a scope object to the param. Be aware that the directive uses one-way-binding like ng-class, so you need to put your scope variable in double curly braces:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;s-alert</span> <span class="na">options=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/s-alert&gt;</span></code></pre>
+                </div>
+                <p>Available options:</p>
+                <ul>
+                    <li>
+                        <strong>container</strong>
+                        <code>(default: false)</code>: specify if alerts should be wrapped into a bootstrap container, making it smaller in width</li>
+                    <li>
+                        <strong>fixedOnTop</strong>
+                        <code>(default: true)</code>: specify if alerts should be fixed on top of the page so that they are always visible</li>
+                </ul>
+            </div>
+            <div class="col-xs-12"></div>
+        </div>
+        <hr>
+        <div id="Instances" class="post">
+            <h1 class="postTitle">Instances
+                <small>manage multiple separate alert instances</small>
+            </h1>
+            <div class="col-xs-6 exampleTemplate">
+                <div ng-controller="alertInstancesCtrl">
+                    <div class="row col-xs-12">
+                        <h5>add alerts for instance 1</h5>
+                        <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccess('alertInstance1')">success</button>
+                        <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfo('alertInstance1')">info</button>
+                        <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addError('alertInstance1')">error</button>
+                    </div>
+                    <div class="row col-xs-12">
+                        <div class="col-xs-12 bordered">
+                            <h5>instance 1 alerts:</h5>
+                            <s-alert options="{fixedOnTop: false}" instance="alertInstance1"></s-alert>
+                        </div>
+                    </div>
+                    <div class="row col-xs-12">
+                        <h5>add alerts for instance 2</h5>
+                        <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccess('alertInstance2')">success</button>
+                        <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfo('alertInstance2')">info</button>
+                        <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addError('alertInstance2')">error</button>
+                    </div>
+                    <div class="row col-xs-12">
+                        <div class="col-xs-12 bordered">
+                            <h5>instance 2 alerts:</h5>
+                            <s-alert options="{fixedOnTop: false}" instance="alertInstance2"></s-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p>The
+                    <em>fixedOnTop</em>option allows you to display alerts locally on a page and by using multiple
+                    <em>sAlert</em>directives you can display alerts in multiple locations in your app. But by default all directives will display the same alerts. To have complete separate alerts you can connect a
+                    <em>sAlert</em>directive to an instance:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;s-alert</span> <span class="na">options=</span><span class="s">&quot;{fixedOnTop: false}&quot;</span> <span class="na">instance=</span><span class="s">&quot;myAlertInstance&quot;</span><span class="nt">&gt;&lt;/s-alert&gt;</span></code></pre>
+                </div>
+                <p>Set the option
+                    <em>fixedOnTop</em>to false to let the alerts be displayed in different locations.</p>
+                <p>Each alert definition can now be bound to an instance making it only visible in this location.Just add the name of the instance as a second parameter when declaring an alert:</p>
+                <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;my success message&#39;</span><span class="p">,</span> <span class="s1">&#39;myAlertInstance&#39;</span><span class="p">);</span></code></pre>
+                </div>
+            </div>
+            <div class="col-xs-12"></div>
+        </div>
+        <hr>
+        <div id="Contribution" class="post">
+            <h1 class="postTitle">Contribution
+                <small>development of the project</small>
+            </h1>
+            <div class="col-xs-12">
+                <h2>Install development dependencies</h2>
+                <p>For the client side dependencies run bower:</p> <pre><code>bower install
+        </code></pre>
+                <p>The development workflow requires additional npm dependencies:</p> <pre><code>npm install
+        </code></pre>
+                <h2>Unit tests</h2>
+                <p><a href="http://karma-runner.github.io/">Karma</a> is used as a unit test runner for AngularJS. The configs for the test runner are specified in
+                    <em>karma.conf.js</em>.</p>
+                <p>Run the unit tests:</p> <pre><code>karma start
+        </code></pre>
+                <p>A coverage report is generated in the folder
+                    <em>coverage</em>.</p>
+                <h2>Automatic workflow</h2>
+                <p>For automation
+                    <em>angular-sAlert</em>uses the task runner <a href="http://gruntjs.com/">grunt</a>. All tasks are defined in
+                    <em>Gruntfile.js</em>.</p>
+                <p>The default task runs unit tests, jshint, packages all files and copies them to the
+                    <em>dist</em>folder. To execute it run:</p> <pre><code>grunt
+        </code></pre>
+                <p>While developing you can let grunt watch for file changes and automatically run the default task on a change:</p> <pre><code>grunt watch
+        </code></pre>
+                <h2>Versioning</h2>
+                <p>Releases are versioned as follows:</p> <pre><code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;
+        </code></pre>
+                <h2>Branching</h2>
+                <p>The project uses git flow. New code is first implemented in feature branches and once stable merged to
+                    <em>develop</em>. The
+                    <em>master</em>branch contains stable releases each tagged with their version number.</p>
+                <h2>GitHub</h2>
+                <p>If you have any ideas, suggestions or found a bug you can open an <a href="https://github.com/aeife/angular-sAlert/issues">issue</a>. Feel free to contribute to
+                    <em>angular-sAlert</em>and open pull requests.</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="../dist/sAlert.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-smoothscroll/dist/scripts/bb15da28.scripts.js"></script>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/simpleAlerts.js"></script>
+    <script type="text/javascript" src="./scripts/autoRemoveAlerts.js"></script>
+    <script type="text/javascript" src="./scripts/promiseAlerts.js"></script>
+    <script type="text/javascript" src="./scripts/configuration.js"></script>
+    <script type="text/javascript" src="./scripts/instances.js"></script>
+    <footer>
+        <div class="container">
+            <div class="col-xs-4"> <a href="http://andre-eife.de">© 2014 André Eife</a>
+            </div>
+            <div class="col-xs-5 pull-right text-right">
+                <a href="https://github.com/aeife" class="fa fa-github fa-2x"></a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

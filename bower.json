@@ -20,6 +20,8 @@
   "devDependencies": {
     "angular": "~1.2.19",
     "angular-mocks": "~1.2.19",
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "fontawesome": "~4.1.0",
+    "angular-smoothscroll": "~1.1.1"
   }
 }
