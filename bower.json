@@ -1,0 +1,23 @@
+{
+  "name": "angular-sAlert gh-pages",
+  "version": "0.0.0",
+  "authors": [
+    "aeife <andre.eife@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-sAlert": "~1.1.2",
+    "angular-smoothscroll": "~1.1.1",
+    "angular": "~1.2.19",
+    "fontawesome": "~4.1.0",
+    "bootstrap": "~3.2.0"
+  }
+}

@@ -1,0 +1,36 @@
+.sAlert {
+    @import "../bower_components/bootstrap/less/variables.less";
+    @import "../bower_components/bootstrap/less/alerts.less";
+    @import "../bower_components/bootstrap/less/mixins/alerts.less";
+    @import "../bower_components/bootstrap/less/close.less";
+    @import "../bower_components/bootstrap/less/mixins/opacity.less";
+
+    font-family: @font-family-sans-serif;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+
+    .close {
+        border: 0;
+        background: none;
+        padding-top: 0;
+        font-family: inherit;
+    }
+
+    .alert {
+        padding: 3px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .fixed-on-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .alertContent {
+        z-index: 99;
+    }
+}
+

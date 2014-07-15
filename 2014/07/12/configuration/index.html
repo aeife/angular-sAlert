@@ -1,0 +1,64 @@
+<div id="header" class="jumbotron">
+    <div class="container">
+        <div class="col-xs-7 col-md-8 col-lg-9">
+            <h1>angular-sAlert</h1>
+            <p>simple, smart alerts for AngularJS</p>
+            <a class="btn btn-default btn-lg" role="button" href=https://github.com/aeife/angular-sAlert/archive/1.1.2.zip><i class="fa fa-download fa-lg"></i> Download (1.1.2)</a>
+            <a class="btn btn-default btn-lg" role="button" href="https://github.com/aeife/angular-sAlert"><i class="fa fa-github fa-lg"></i> View on GitHub</a>
+        </div>
+        <div class="col-xs-5 col-md-4 col-lg-3">
+            <img src="/angular-sAlert/img/iconBlack.png">
+        </div>
+        
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span8">
+        <h1>Configuration</h1>
+        <p class="muted">12 July 2014</p>
+
+        <p>You can configure various display options via the <em>sAlert</em> directive. Just put an object in the <em>options</em> param.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;s-alert</span> <span class="na">options=</span><span class="s">&quot;{container: true}&quot;</span><span class="nt">&gt;&lt;/s-alert&gt;</span></code></pre></div>
+
+
+<p>Alernativly you can directly add a scope object to the param. Be aware that the directive uses one-way-binding like ng-class, so you need to put your scope variable in double curly braces:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;s-alert</span> <span class="na">options=</span><span class="s">&quot;{{myAlertOption}}&quot;</span><span class="nt">&gt;&lt;/s-alert&gt;</span></code></pre></div>
+
+
+<p>Available options:</p>
+
+<ul>
+<li><strong>container</strong> <code>(default: false)</code>: specify if alerts should be wrapped into a bootstrap container, making them smaller in width</li>
+<li><strong>fixedOnTop</strong> <code>(default: true)</code>: specify if alerts should be positioned fixed on top of the page so that they are always visible</li>
+</ul>
+
+
+<p><strong>Custom Styles</strong></p>
+
+<p>The style of the alert messages is easily adjustable via css. All classes are prefixed with the class <em>sAlert</em>. Here are the most useful classes for custom styling:</p>
+
+<ul>
+<li><code>.sAlert .fixed-on-top</code>: only included when fixedOnTop is true, useful for defining a margin of the first fixed alert on top of your page</li>
+<li><code>.sAlert .alert</code>: define the style of the content for each alert</li>
+<li><code>.sAlert .alert-success | .alert-info | .alert-error</code>: different alert types</li>
+</ul>
+
+
+<p>If you want to style separate <em>sAlert</em> instances differently just assign classes to the directives.</p>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="col-xs-4">
+            <a href="http://andre-eife.de">© 2014 André Eife</a>
+        </div>
+        <div class="col-xs-5 pull-right text-right">
+            <a href="https://github.com/aeife" class="fa fa-github fa-2x"></a>
+        </div>
+    </div>
+</footer>

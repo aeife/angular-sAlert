@@ -1,0 +1,47 @@
+<div id="header" class="jumbotron">
+    <div class="container">
+        <div class="col-xs-7 col-md-8 col-lg-9">
+            <h1>angular-sAlert</h1>
+            <p>simple, smart alerts for AngularJS</p>
+            <a class="btn btn-default btn-lg" role="button" href=https://github.com/aeife/angular-sAlert/archive/1.1.2.zip><i class="fa fa-download fa-lg"></i> Download (1.1.2)</a>
+            <a class="btn btn-default btn-lg" role="button" href="https://github.com/aeife/angular-sAlert"><i class="fa fa-github fa-lg"></i> View on GitHub</a>
+        </div>
+        <div class="col-xs-5 col-md-4 col-lg-3">
+            <img src="/angular-sAlert/img/iconBlack.png">
+        </div>
+        
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span8">
+        <h1>Auto Removing Alerts</h1>
+        <p class="muted">10 July 2014</p>
+
+        <p>The standard alerts need to be closed manually one by one by clicking the close icon on the right. But you can specify that an alert should close itself automatically after a while. The default timeout for the close is two seconds.</p>
+
+<p>In order to add the auto removing behavior to an alert just append the following function to the declaration:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">.</span><span class="nx">autoRemove</span><span class="p">()</span></code></pre></div>
+
+
+<p>As an example, here is the definition of an auto removing success alert:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">sAlert</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s1">&#39;i will remove myself soon&#39;</span><span class="p">).</span><span class="nx">autoRemove</span><span class="p">();</span></code></pre></div>
+
+
+<p>This works with all types of alerts.</p>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="col-xs-4">
+            <a href="http://andre-eife.de">© 2014 André Eife</a>
+        </div>
+        <div class="col-xs-5 pull-right text-right">
+            <a href="https://github.com/aeife" class="fa fa-github fa-2x"></a>
+        </div>
+    </div>
+</footer>
