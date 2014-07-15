@@ -1,0 +1,28 @@
+<div ng-controller="alertInstancesCtrl">
+    <div class="row col-xs-12">
+        <h5>add alerts for instance 1</h5>
+        <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccess('alertInstance1')">success</button>
+        <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfo('alertInstance1')">info</button>
+        <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addError('alertInstance1')">error</button>
+    </div>
+    <div class="row col-xs-12">
+        <div class="col-xs-12 bordered">
+            <h5>instance 1 alerts:</h5>
+            <s-alert options="{fixedOnTop: false}" instance="alertInstance1"></s-alert>
+        </div>
+    </div>
+
+    
+    <div class="row col-xs-12">
+        <h5>add alerts for instance 2</h5>
+        <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccess('alertInstance2')">success</button>
+        <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfo('alertInstance2')">info</button>
+        <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addError('alertInstance2')">error</button>
+    </div>
+    <div class="row col-xs-12">
+        <div class="col-xs-12 bordered">
+            <h5>instance 2 alerts:</h5>
+            <s-alert options="{fixedOnTop: false}" instance="alertInstance2"></s-alert>
+        </div>
+    </div>
+</div>

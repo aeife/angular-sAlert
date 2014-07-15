@@ -1,0 +1,12 @@
+<div ng-controller="promiseAlertsCtrl">
+    <h5>open alerts bound to a promise:</h5>
+    <div class="row col-xs-12">
+        <button class="btn btn-success col-xs-12 col-md-3" ng-click="addSuccessAndRemoveOnPromise()">success</button>
+        <button class="btn btn-info col-xs-12 col-md-3 col-md-offset-1" ng-click="addInfoAndRemoveOnPromise()">info</button>
+        <button class="btn btn-danger col-xs-12 col-md-3 col-md-offset-1" ng-click="addErrorAndRemoveOnPromise()">error</button>
+    </div>
+    <div class="row col-xs-12">
+        <h5>close alerts by resolving the promise</h5>
+        <button class="btn btn-primary col-xs-12 col-md-5" ng-click="resolvePromise()">resolve promise</button>
+    </div>
+</div>

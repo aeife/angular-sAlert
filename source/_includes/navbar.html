@@ -1,0 +1,50 @@
+{% assign sorted_posts = (site.posts | sort: 'order') %}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="" smooth-scroll-jquery target="header"><img src="/img/iconBlack.png" height="15"> {{site.name}}</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {% for post in sorted_posts %}
+          {% if post.navbarPlacement == "left" %}
+            <li><a href="" smooth-scroll-jquery target="{{post.title | replace: " ", "-"}}" offset="55">{{post.title}}</a></li>
+          {% endif %}
+        {% endfor %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            {% for post in sorted_posts %}
+              {% if post.type == "examplePost.html" %}
+                <li><a href="" smooth-scroll-jquery target="{{post.title | replace: " ", "-"}}" offset="55">{{post.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+        {% for post in sorted_posts %}
+          {% if post.navbarPlacement == "right" %}
+            <li><a href="" smooth-scroll-jquery target="{{post.title | replace: " ", "-"}}" offset="55">{{post.title}}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+
+
+{% for post in sorted_posts %}
+
+{% endfor %}

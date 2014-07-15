@@ -1,0 +1,13 @@
+<div ng-controller="simpleAlertsCtrl" >
+    <h5> open a simple success alert: </h5>
+    <input type="text" class="form-control" ng-model="successAlertMsg">
+    <button class="btn btn-success btn-block" ng-click="addSuccess()">success alert</button>
+    
+    <h5> open a simple info alert: </h5>
+    <input type="text" class="form-control" ng-model="infoAlertMsg">
+    <button class="btn btn-info btn-block" ng-click="addInfo()">info alert</button>
+    
+    <h5> open a simple error alert: </h5>
+    <input type="text" class="form-control" ng-model="errorAlertMsg">
+    <button class="btn btn-danger btn-block" ng-click="addError()">error alert</button>
+</div>

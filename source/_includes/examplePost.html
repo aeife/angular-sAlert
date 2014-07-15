@@ -1,0 +1,12 @@
+<div id="{{post.title | replace: " ", "-"}}" class="post">
+    <h1 class="postTitle">{{ post.title }} <small>{{post.subtitle}}</small></h1>
+    <div class="col-xs-6 exampleTemplate">
+        {% include {{post.template}} %}
+    </div>
+    <div class="col-xs-6">
+        {{post.content}}    
+    </div>
+    <div class="col-xs-12">
+        {% include {{post.jsfiddle}} %}
+    </div>
+</div>
